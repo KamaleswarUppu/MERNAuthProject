@@ -1,0 +1,27 @@
+{
+  "name": "rural-e-commerce-platform",
+  "version": "1.0.0",
+  "description": "E-commerce platform for rural artisans",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server/src/server.js",
+    "server": "nodemon server/src/server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "build": "npm install && cd client && npm install && npm run build && cd ../netlify/functions && npm install",
+    "deploy": "npm run build",
+    "netlify-build": "npm run build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^8.2.2",
+    "react-apexcharts": "^1.7.0",
+    "react-countup": "^6.5.3"
+  },
+  "devDependencies": {
+    "json-server": "^1.0.0-beta.3",
+    "nodemon": "^3.1.10"
+  }
+}
